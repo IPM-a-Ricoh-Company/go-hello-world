@@ -11,7 +11,7 @@ import (
 
 func TestH1(t *testing.T) {
 	handler := http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		fmt.Fprint(w, INDEX)
+		fmt.Fprint(w, html)
 	})
 
 	server := httptest.NewServer(handler)

@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-const INDEX = `<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html>
   <head>
     <title>Hello world from Cartographer</title>
@@ -40,7 +40,6 @@ const INDEX = `<!DOCTYPE html>
   </head>
   <body>
     <main>
-      <!-- <h1>Hello World from... ¡¡Cartographer!!</h1> -->
       <h1>Hello World from... ¡¡Cartographer!!</h1>
       <img src="https://supply-chain-pictures.s3.eu-south-2.amazonaws.com/supply-chain.png">
     </main>
@@ -52,7 +51,7 @@ const INDEX = `<!DOCTYPE html>
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
-		fmt.Fprint(w, INDEX)
+		fmt.Fprint(w, html)
 	})
 
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
